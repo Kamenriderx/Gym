@@ -3,10 +3,26 @@ import { LiaCartPlusSolid } from "react-icons/lia";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { FaUserFriends } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Context from "../../context/Context";
+import { Link } from "react-router-dom";
+
 function NavBar() {
-  const { globalState } = useContext(Context);
+  const {globalState,setGlobalState} = useContext(Context);
+  
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if(token){
+      setGlobalState(prevGlobalState => ({ ...prevGlobalState, token,session:true }));
+    }
+    
+  }, [])
+  
+  useEffect(() => {
+    
+    
+  }, [globalState.session])
+
   console.log(globalState.session);
   return (
     <div className="flex items-center justify-center h-full ">
@@ -56,11 +72,11 @@ function NavBar() {
           </>
         )}
         {!globalState.session && <div className="flex justify-end w-full pr-6" >
-            <button className="block hover:font-semibold ">
+            <Link to="/login" className="block hover:font-semibold ">
                 <p className=" hover:border-b-black"> 
                   Ingresar
                 </p>
-            </button>
+            </Link>
         </div>}
       </div>
     </div>

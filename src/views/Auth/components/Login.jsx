@@ -1,9 +1,40 @@
 import { AiOutlineUser } from "react-icons/ai";
 import { MdPassword } from "react-icons/md";
 import logo from "./../../../assets/logo.png";
-
+import { httpRequests } from "../../../utils/httpRequest";
+import { useContext, useState } from "react";
+import Context from "../../../context/Context";
+import {  useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+  const {setGlobalState} = useContext(Context);
+  const [authData, setAuthData] = useState({
+    name:"",
+    password:""
+  })
+  const handdleConnection = (e) =>{
+    e.preventDefault();
+    httpRequests()["post"]("http://localhost:3000/mastergym/register/login",{body:{...authData}})
+    .then(res=>{
+      console.log(res);
+      if(res.data.token){
+        const token = res.data.token
+        setGlobalState(prevGlobalState => ({ ...prevGlobalState, token,session:true }));
+        localStorage.setItem("token",token);
+        navigate(`/home`);
+        console.log(token);
+      }else{
+        console.log(res);
+      }
+    })
+  }
+  const handdleChange =(e)=>{
+    const {value,name} = e.target;
+    setAuthData({...authData,[name]:value});
+
+  }
+
   return (
     <form className="flex justify-center flex-col w-2/5 bg-[#222] pl-5">
       <div className="flex flex-col items-center justify-center w-full">
@@ -20,7 +51,10 @@ const LoginForm = () => {
                 </div>
                 <input
                   placeholder="Usuario"
+                  name ="name"
+                  value={authData.name}
                   className="w-full h-full rounded-r-lg outline-none"
+                  onChange={handdleChange}
                   required
                 />
               </div>
@@ -32,8 +66,10 @@ const LoginForm = () => {
                 <input
                   type="password"
                   placeholder="Contraseña"
-                  name="PV_PASS"
+                  name="password"
+                  value={authData.password}
                   className="w-full h-full rounded-r-lg outline-none"
+                  onChange={(e)=>handdleChange(e)}
                   required
                 />
               </div>
@@ -43,7 +79,7 @@ const LoginForm = () => {
               <a href="#" className="mb-[10px] mr-5 text-white hover:underline">
                 Olvide mi contraseña
               </a>
-              <a className="mb-[10px] mr-5 text-white hover:underline cursor-pointer">Iniciar sesion</a>
+              <button onClick={(e)=>handdleConnection(e)} className="mb-[10px] mr-5 text-white hover:underline cursor-pointer">Iniciar sesion</button>
             </div>
           </div>
         </div>

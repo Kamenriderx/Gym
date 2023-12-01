@@ -3,6 +3,9 @@ import CoachesImage from "./components/CoachesImage";
 import ListImage from "./components/ListImage";
 import ListItem from "./components/ListItem";
 import landingImage from "../../assets/fondo.jpg";
+import { useNavigate } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import Context from "../../context/Context";
 const programs = [
   {
     title: "FORTALECE TU CUERPO",
@@ -50,6 +53,21 @@ const coachesImages = [
 ];
 
 const LandingPage = () => {
+  const { globalState,setGlobalState } = useContext(Context);
+  const navigate = useNavigate();
+  if (globalState.session) {
+    navigate("/home");
+  }  
+  useEffect(() => {
+    localStorage.removeItem('token');
+    setGlobalState(prevGlobalState => ({ ...prevGlobalState, token:"",session:false }));
+    navigate("/");
+
+  }, [])
+  
+  
+  
+
   return (
     <div className="w-screen h-screen">
       <div className="w-full h-1/6">
