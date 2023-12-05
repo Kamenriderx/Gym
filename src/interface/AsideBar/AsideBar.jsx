@@ -92,11 +92,13 @@ export default function AsideBar(props) {
                 text="Ayuda"
                 selected={selected}
                 setSelected={setSelected}
+                link="/home/help"
               ></Option>
               <Option
                 text="Contactanos"
                 selected={selected}
                 setSelected={setSelected}
+                link="/home/contact"
               ></Option>
               <Option
                 text="Cerrar seción"

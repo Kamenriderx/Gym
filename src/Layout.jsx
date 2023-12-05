@@ -6,6 +6,8 @@ import Products from "./views/Products/Products";
 import Settings from "./views/Settigns/Settings";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Context from "./context/Context";
+import Help from "./views/Help/Help";
+import Contact from "./views/Contact/Contact";
 
 const Layout =() => {
     
@@ -35,6 +37,8 @@ const Layout =() => {
             <Route path="/" element={<ShopingCart></ShopingCart>} />
             <Route path="/products" element={<Products></Products>} />
             <Route path="/settings" element={<Settings></Settings>} />
+            <Route path="/help" element={<Help/>} />
+            <Route path="/Contact" element={<Contact/>} />
           </Routes>
         </div>
       </div>
