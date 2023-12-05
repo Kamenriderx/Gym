@@ -24,12 +24,6 @@ const options = [
     link: "/home/products"
   },
   {
-    icon: BiMessageRounded,
-    text: "Mensajes",
-    link: "/home/messages"
-
-  },
-  {
     icon: GiWeightLiftingUp,
     text: "Entrenadores",
     link: "/home/trainers"
