@@ -1,5 +1,4 @@
 import { LiaCartPlusSolid } from "react-icons/lia";
-import { BiMessageRounded } from "react-icons/bi";
 import { FaWeightHanging } from "react-icons/fa";
 import { GiWeightLiftingUp } from "react-icons/gi";
 import { MdOutlineFastfood } from "react-icons/md";
