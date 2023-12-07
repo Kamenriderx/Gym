@@ -23,12 +23,7 @@ const options = [
     text: "Productos",
     link: "/home/products"
   },
-  {
-    icon: LiaWeightSolid,
-    text: "Rutinas",
-    link: "/home/routines"
 
-  },
   {
     icon: GiWeightLiftingUp,
     text: "Entrenadores",
@@ -92,11 +87,13 @@ export default function AsideBar(props) {
                 text="Ayuda"
                 selected={selected}
                 setSelected={setSelected}
+                link="/home/help"
               ></Option>
               <Option
                 text="Contactanos"
                 selected={selected}
                 setSelected={setSelected}
+                link="/home/contact"
               ></Option>
               <Option
                 text="Cerrar seción"
