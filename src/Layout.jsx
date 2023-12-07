@@ -6,6 +6,10 @@ import Products from "./views/Products/Products";
 import Settings from "./views/Settigns/Settings";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Context from "./context/Context";
+import Users from "./views/Users/Users";
+import Routines from "./views/Routines/Routines";
+import Coaches from "./views/Coaches/Coaches";
+import CoachesProfile from "./views/Coaches/CoachesProfile";
 
 const Layout =() => {
     
@@ -35,6 +39,10 @@ const Layout =() => {
             <Route path="/" element={<ShopingCart></ShopingCart>} />
             <Route path="/products" element={<Products></Products>} />
             <Route path="/settings" element={<Settings></Settings>} />
+            <Route path="/users" element={<Users></Users>} />
+            <Route path="/routines" element={<Routines></Routines>} />
+            <Route path="/coaches" element={<Coaches></Coaches>} />
+            <Route path="/coaches/profile" element={<CoachesProfile></CoachesProfile>} />
           </Routes>
         </div>
       </div>

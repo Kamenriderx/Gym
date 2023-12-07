@@ -1,5 +1,5 @@
 import NavBar from "../../interface/NavBar/NavBar";
-import CoachesImage from "./components/CoachesImage";
+
 import ListImage from "./components/ListImage";
 import ListItem from "./components/ListItem";
 import landingImage from "../../assets/fondo.jpg";
@@ -44,13 +44,7 @@ const images = [
   "https://dtsvkkjw40x57.cloudfront.net/page-builder%2FUPouMuMmT2KgDGjiDUqc_12.png",
 ];
 
-const coachesImages = [
-  "https://dtsvkkjw40x57.cloudfront.net/page-builder%2FnIMa98KRS9COetMKHVK9_IFC-Agusto.png",
-  "https://dtsvkkjw40x57.cloudfront.net/page-builder%2F75HLS5ngREW5ZSvNqBKI_IFC-Mariana.png",
-  "https://dtsvkkjw40x57.cloudfront.net/page-builder%2FSikptcPYS8GQF90qooq0_IFC-Karmona.png",
-  "https://dtsvkkjw40x57.cloudfront.net/page-builder%2Fl1qos4eLQ92p8Wpn7Crl_IFC-Pilar.png",
-  "https://dtsvkkjw40x57.cloudfront.net/page-builder%2FCESkwJEeRumF5V7rdNRU_IFC-Raul.png",
-];
+
 
 const LandingPage = () => {
   const { globalState,setGlobalState } = useContext(Context);
@@ -108,20 +102,7 @@ const LandingPage = () => {
             </div>
           </div>
 
-          <div className="bg-[#111] text-white w-full h-[500px] flex flex-col content-center items-center pt-[60px]">
-            <h6>COACHES</h6>
-            <p className="text-center mt-[60px]">
-              Reunimos a los mejores instructores certificados de health,
-              fitness y disciplinas enfocadas<br></br> en el bienestar integral
-              para ofrecerte todo en un solo lugar.
-            </p>
 
-            <div className="flex content-between justify-around ">
-              {coachesImages.map((coach, index) => (
-                <CoachesImage key={index} url={coach} />
-              ))}
-            </div>
-          </div>
           <div className="flex flex-col w-full justify-center items-center pt-[50px] bg-black text-white">
             <div className="w-4/5 border-b-2 border-white mb-[60px] pb-[60px]">
               <h6>BENEFICIOS</h6>

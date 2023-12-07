@@ -1,5 +1,4 @@
 import { LiaCartPlusSolid } from "react-icons/lia";
-import { BiMessageRounded } from "react-icons/bi";
 import { FaWeightHanging } from "react-icons/fa";
 import { GiWeightLiftingUp } from "react-icons/gi";
 import { MdOutlineFastfood } from "react-icons/md";
@@ -7,6 +6,7 @@ import { FaUserFriends } from "react-icons/fa";
 import { MdOutlineLogout } from "react-icons/md";
 import { MdSettingsApplications } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { LiaWeightSolid } from "react-icons/lia";
 import Option from "./Option";
 import Logo from "../../assets/Image.jpeg";
 import { useContext, useState } from "react";
@@ -24,15 +24,15 @@ const options = [
     link: "/home/products"
   },
   {
-    icon: BiMessageRounded,
-    text: "Mensajes",
-    link: "/home/messages"
+    icon: LiaWeightSolid,
+    text: "Rutinas",
+    link: "/home/routines"
 
   },
   {
     icon: GiWeightLiftingUp,
     text: "Entrenadores",
-    link: "/home/trainers"
+    link: "/home/coaches"
   },
   {
     icon: MdOutlineFastfood,

@@ -1,4 +1,3 @@
-import NavBar from "../../interface/NavBar";
 import Image from "./components/Image";
 import GoalList from "./components/GoalList";
 import { useState } from "react";
@@ -201,7 +200,6 @@ const Routines = () => {
         backgroundColor: "#222",
       }}
     >
-      <NavBar />
 
       <div>
         <div
