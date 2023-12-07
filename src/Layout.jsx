@@ -36,7 +36,7 @@ const Layout =() => {
         <div className="w-full h-1/6">
           <NavBar></NavBar>
         </div>
-        <div className="w-full h-5/6 bg-slate-100">
+        <div className="w-full overflow-hidden h-5/6 bg-slate-100">
           <Routes>
             <Route path="/" element={<ShopingCart></ShopingCart>} />
             <Route path="/products" element={<Products></Products>} />

@@ -10,7 +10,7 @@ const coachesImages = [
 
 function Coaches() {
   return (
-    <div className="bg-[#111] text-white w-full h-full flex flex-col content-center items-center pt-[60px]">
+    <div className="bg-[#111] text-white w-full h-full  flex flex-col content-center items-center pt-[60px]">
       <h6 className="mb-10 text-4xl font-semibold">Entrenadores</h6>
 
 

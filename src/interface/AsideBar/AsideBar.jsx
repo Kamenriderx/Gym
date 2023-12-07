@@ -30,9 +30,9 @@ const options = [
     link: "/home/coaches"
   },
   {
-    icon: MdOutlineFastfood,
-    text: "Dietas",
-    link: "/home/diets"
+    icon: LiaWeightSolid,
+    text: "Rutinas",
+    link: "/home/routines"
   },
   {
     icon: FaUserFriends,

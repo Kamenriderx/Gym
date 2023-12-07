@@ -195,19 +195,18 @@ const images = [
 const Routines = () => {
   const [selected, setSelected] = useState(false);
   return (
-    <div
-      style={{
-        backgroundColor: "#222",
-      }}
+    <div className="bg-[#222] h-full"
+
     >
 
-      <div>
+      <div className="bg-[#222]">
         <div
           style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
+            background:"#222"
           }}
         >
           <h1
