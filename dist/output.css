@@ -1288,10 +1288,6 @@ video {
   text-align: right;
 }
 
-.align-baseline {
-  vertical-align: baseline;
-}
-
 .font-serif {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
