@@ -684,6 +684,18 @@ video {
   margin-top: 60px;
 }
 
+.mr-9 {
+  margin-right: 2.25rem;
+}
+
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -1309,6 +1321,10 @@ video {
 
 .pt-\[60px\] {
   padding-top: 60px;
+}
+
+.pr-9 {
+  padding-right: 2.25rem;
 }
 
 .text-left {

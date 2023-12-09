@@ -17,11 +17,11 @@ function Row(props) {
       <div className="w-1/4 text-left">
         <p>{props.state}</p>
       </div>
-      <div className="w-1/4 text-left">
+      <div className="w-1/4 overflow-hidden text-left">
         <p>{props.category}</p>
       </div>
       {props.header?
-        <div className="w-1/4 text-left">
+        <div className="w-1/4 overflow-hidden text-left">
           <p>Acciones</p>
         </div>:
         <div className="flex ">

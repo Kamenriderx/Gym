@@ -9,6 +9,11 @@ import Modal from "./components/Modal";
 function Users() {
 
   const [users, setUsers] = useState([]);
+  const [allUsers, setAllUsers] = useState([]);
+  const [pagination, setPagination] = useState({
+    page:0,
+    pages:0
+  });
 
   const [showModal, setShowModal] = useState(false);
 
@@ -20,12 +25,25 @@ function Users() {
         subArray.push(res.data.data[i]);
       }
       setUsers(subArray);
-
+      setAllUsers(res.data.data);
+      setPagination({pages:Math.ceil(res.data.data.length/5),page:0});
     }  
-    console.log(users);
     })
 
   }, []);
+
+  useEffect(() => {
+    console.log(allUsers)
+    const subArray = [];
+    for(var i=pagination.page*5; i<(pagination.page+1)*5 ; i++){
+      if(allUsers[i]){
+        subArray.push(allUsers[i]);
+      }
+    }
+    setUsers(subArray);
+
+  }, [pagination]);
+  
   
 
 
@@ -72,7 +90,10 @@ function Users() {
             }
         </div>
         <div className=" h-1/6">
-            <Pagination/>
+            {
+              users.length>0 && 
+              <Pagination pagination={pagination} setPagination={setPagination}/>
+            }
         </div>
       </div>
     </div>
