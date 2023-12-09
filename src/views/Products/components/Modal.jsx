@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Logo from "../../../assets/Image.jpeg";
+import Logo from "../../../assets/logo.png";
 import { httpRequests } from "../../../utils/httpRequest";
 
 function Modal(props) {
