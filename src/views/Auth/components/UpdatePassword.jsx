@@ -20,7 +20,7 @@ function UpdatePassword() {
 
   const handdleConnection = (e) => {
     e.preventDefault();
-    httpRequests()["put"](`http://localhost:3000/mastergym/security/${token}`, {body:{
+    httpRequests()["put"](`http://backend-cqre.onrender.com/mastergym/security/${token}`, {body:{
         USER_PASSWORD:passwords.passwordA
     }})
       .then((res) => {

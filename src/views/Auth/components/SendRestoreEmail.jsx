@@ -14,7 +14,7 @@ function SendRestoreEmail() {
 
   const handdleConnection = (e) => {
     e.preventDefault();
-    httpRequests()["post"]("http://localhost:3000/mastergym/security/sendRestoreEmail", {
+    httpRequests()["post"]("http://backend-cqre.onrender.com/mastergym/security/sendRestoreEmail", {
         body: { CORREO:email },
       })
       .then((res) => {
