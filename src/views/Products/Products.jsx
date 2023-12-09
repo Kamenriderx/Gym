@@ -4,13 +4,11 @@ import Pagination from "../../components/Pagination";
 import { useEffect, useState } from "react";
 import { httpRequests } from "../../utils/httpRequest";
 import Modal from "./components/Modal";
+import { FaDownload } from "react-icons/fa";
 
 function Products() {
-
-const formatOptions = { year: "numeric", month: "numeric", day: "numeric" };
-const formatDate = new Intl.DateTimeFormat("es-ES", formatOptions);
-
-
+  const formatOptions = { year: "numeric", month: "numeric", day: "numeric" };
+  const formatDate = new Intl.DateTimeFormat("es-ES", formatOptions);
 
   const [pagination, setPagination] = useState({
     page: 0,
@@ -52,19 +50,67 @@ const formatDate = new Intl.DateTimeFormat("es-ES", formatOptions);
     setProducts(subArray);
   }, [pagination]);
 
+  const generateCSV = () => {
+    const header = [
+      "Nombre",
+      "Estado",
+      "Descripcion",
+      "Precio",
+      "Fecha",
+      "ID",
+      "Imagen",
+    ];
+    const data = allProducts.map(
+      (product) =>
+        `\n${product.nom_producto},${product.estado},${product.des_producto},${product.precio_producto},${formatDate.format(new Date(product.fecha_registro))},${
+          product.cod_producto
+        },${product.imagen_producto}`
+    );
+    const csvContent =
+      "data:text/csv;charset=utf-8," +
+      `${header[0]},${header[1]},${
+        header[2]
+      },${header[3]},${header[4]},${
+        header[5]
+      },${header[6]}` +
+      `${data}`;
+
+    const downloadLink = document.createElement("a");
+    downloadLink.href = encodeURI(csvContent);
+    downloadLink.target = "_blank";
+    downloadLink.download = "Productos.csv";
+
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  };
+
   return (
     <div className="w-full h-full p-7">
-    {
-      showModal &&
-      <Modal setShowModal={setShowModal}></Modal>
-    }
+      {showModal && <Modal setShowModal={setShowModal}></Modal>}
       <div className="box-border w-full h-full p-8 bg-white shadow-lg rounded-3xl">
         <div className="flex pt-2 h-1/6">
           <div className="w-1/4 ">
-            <div onClick={()=>setShowModal(true)} className="flex items-center justify-center w-3/4 px-3 text-white rounded-full cursor-pointer bg-slate-900 h-1/2 hover:bg-slate-800 active:bg-slate-950">
+            <div
+              onClick={() => setShowModal(true)}
+              className="flex items-center justify-center w-3/4 px-3 text-white rounded-full cursor-pointer bg-slate-900 h-1/2 hover:bg-slate-800 active:bg-slate-950"
+            >
               <div className="mr-2 text-xl font-bold">+</div>
-              <div className="text-xl font-bold" >Añadir Producto</div>
+              <div className="text-xl font-bold">Añadir Producto</div>
             </div>
+            <button
+              onClick={generateCSV}
+              className="bg-lime-500 text-white w-3/4 px-3 rounded-full  h-1/2  mt-3 font-bold text-xl hover:bg-lime-600 flex justify-center items-center"
+            >
+              <div className="mr-2">
+
+               <FaDownload/>
+              </div>
+              <div>
+               Descargar CSV
+
+              </div>
+            </button>
           </div>
           <div className="w-2/4">
             <div className="flex justify-center w-full h-1/2">

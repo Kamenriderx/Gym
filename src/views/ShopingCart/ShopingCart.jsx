@@ -2,7 +2,7 @@ import { LiaCartPlusSolid } from "react-icons/lia";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { FaWeightHanging } from "react-icons/fa";
 import DoughnutGraphic from "./DoughnutGraphic";
-import Logo from "../../assets/Image.jpeg";
+import Logo from "../../assets/logo.png";
 import Product from "./Product";
 function ShopingCart() {
   return (
