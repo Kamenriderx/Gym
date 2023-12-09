@@ -15,7 +15,7 @@ const LoginForm = () => {
   });
   const handdleConnection = (e) => {
     e.preventDefault();
-    httpRequests()["post"]("http://backend-cqre.onrender.com/mastergym/register/login", {
+    httpRequests()["post"]("https://backend-cqre.onrender.com/mastergym/register/login", {
         body: { ...authData },
       })
       .then((res) => {

@@ -19,7 +19,7 @@ function Products() {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    httpRequests()["get"]("http://backend-cqre.onrender.com/mastergym/product/getProducts", {
+    httpRequests()["get"]("https://backend-cqre.onrender.com/mastergym/product/getProducts", {
         headers: { authorization: localStorage.getItem("token") },
       })
       .then((res) => {

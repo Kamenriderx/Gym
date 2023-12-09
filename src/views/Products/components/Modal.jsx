@@ -22,7 +22,7 @@ function Modal(props) {
 
 
   /* const handleClick = () =>{
-    httpRequests()["post"]("http://localhost:3000/mastergym/register/addUser",{headers:{authorization:localStorage.getItem("token")},body:{
+    httpRequests()["post"]("https://localhost:3000/mastergym/register/addUser",{headers:{authorization:localStorage.getItem("token")},body:{
     "codRol":1,
     "userName":ProductData.name,
     "password":ProductData.password,

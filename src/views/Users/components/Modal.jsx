@@ -14,7 +14,7 @@ function Modal(props) {
 
 
   const handleClick = () =>{
-    httpRequests()["post"]("http://backend-cqre.onrender.com/mastergym/register/addUser",{headers:{authorization:localStorage.getItem("token")},body:{
+    httpRequests()["post"]("https://backend-cqre.onrender.com/mastergym/register/addUser",{headers:{authorization:localStorage.getItem("token")},body:{
     "codRol":1,
     "userName":userData.name,
     "password":userData.password,

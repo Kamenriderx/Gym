@@ -18,7 +18,7 @@ function Users() {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    httpRequests()["get"]("http://backend-cqre.onrender.com/mastergym/register/getUsers",{headers:{authorization:localStorage.getItem("token")}}).then(res=>{
+    httpRequests()["get"]("https://backend-cqre.onrender.com/mastergym/register/getUsers",{headers:{authorization:localStorage.getItem("token")}}).then(res=>{
     if(res.data.data){
       const subArray = [];
       for(var i= 0; i<5 ; i++){
