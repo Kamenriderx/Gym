@@ -8,7 +8,7 @@ import { MdSettingsApplications } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { LiaWeightSolid } from "react-icons/lia";
 import Option from "./Option";
-import Logo from "../../assets/Image.jpeg";
+import Logo from "../../assets/logo.png";
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Context from "../../context/Context";
