@@ -5,7 +5,9 @@ import { httpRequests } from "../../../utils/httpRequest";
 function Modal(props) {
   const [userData, setUserData] = useState({
     password:"",
-    name:""
+    name:"",
+    CodRol: ""
+
   })
   const handdleChange = (e) => {
     const { value, name } = e.target;
@@ -18,7 +20,8 @@ function Modal(props) {
     "codRol":1,
     "userName":userData.name,
     "password":userData.password,
-    "email":"alejandro.reyes95@yahoo.com"
+    "email": "alejandro.reyes95@yahoo.com",
+    "CodRol": userData.codRol
     }}).then(res=>{
       console.log(res);  
     })
@@ -59,6 +62,14 @@ function Modal(props) {
               placeholder="Contraseña"
               onChange={handdleChange}
               value={userData.password}
+            />
+                        <input
+              className="w-full mb-4 outline-none rounded-lg h-[40px] text-black font-semibold pl-3"
+              type="text"
+              name="Cod Rol"
+              placeholder="codigo Rol"
+              onChange={handdleChange}
+              value={userData.codRol}
             />
             <button className="w-full h-[40px] bg-black rounded-lg" onClick={()=>handleClick()}>
               Añadir
